@@ -4,7 +4,7 @@ This container is heavily inspired in https://github.com/cmatzenbach/conway-ff-a
 
 It is meant to be used as a starting point for more complex web services.
 
-You can replace `cl-api.asdf` with your own Lisp package(s).
+You can replace `cl-api.asd` with your own Lisp package(s).
 
 <img src="lispLogo.svg" width=300 align=right>
 
