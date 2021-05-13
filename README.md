@@ -12,6 +12,11 @@ This container is heavily inspired in https://github.com/cmatzenbach/conway-ff-a
 
 `make run`
 
+The server runs in port 5000.
 
+### Live server in Swank
 
+In Emacs:
+<code>M-x slime-connect</code>
+and use `localhost` as host and port `4005`
 	
