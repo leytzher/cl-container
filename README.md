@@ -2,6 +2,8 @@
 
 This container is heavily inspired in https://github.com/cmatzenbach/conway-ff-api and https://github.com/rigetti/docker-lisp 
 
+It is meant to be used as a starting point for more complex web services.
+
 ![lisp alien](lispLogo.svg)
 
 ### Build container:
