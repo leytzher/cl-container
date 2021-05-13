@@ -25,5 +25,11 @@ It has an example end point `http://localhost:5000/hello` that you can use to te
 
 In Emacs:
 <code>M-x slime-connect</code>
-and use `localhost` as host and port `4005`
+and use `localhost`  as host -- or your host IP address (if you are running remotely)-- and port `4005`
+
+To debug/edit or make changes to the running image:
+`(in-package :server)`
+and hack away!
+
+
 	
