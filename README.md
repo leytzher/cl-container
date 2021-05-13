@@ -15,7 +15,9 @@ It is meant to be used as a starting point for more complex web services.
 
 `make run`
 
-The server runs in port 5000.
+The server runs in `http://localhost:5000`.
+
+It has an example end point `http://localhost:5000/hello/<your-name>` that you can use to test if all is okay.
 
 ### Live server in Swank
 
