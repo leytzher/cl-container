@@ -1,4 +1,4 @@
-# Common Lisp container running a simple REST API
+## Common Lisp container running a simple REST API
 
 This container is heavily inspired in https://github.com/cmatzenbach/conway-ff-api and https://github.com/rigetti/docker-lisp 
 
