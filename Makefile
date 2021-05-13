@@ -10,7 +10,7 @@ cl-container: Dockerfile
 		--build-arg QUICKLISP_VERSION=$(QUICKLISP_VERSION) .
 
 run: cl-container
-	sudo docker run -a stdin -a stdout -a stderr -i -t leytzher/cl-container:$(QUICKLISP_VERSION)
+	sudo docker run -a stdin -a stdout -a stderr -p 5000:5000 -p 4005:4005 -i -t leytzher/cl-container:$(QUICKLISP_VERSION)
 
 clean:
 	sudo docker rm $(docker ps -a -q)

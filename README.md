@@ -19,7 +19,7 @@ You can replace `cl-api.asd` with your own Lisp package(s).
 
 The server runs in `http://localhost:5000`.
 
-It has an example end point `http://localhost:5000/hello/<your-name>` that you can use to test if all is okay.
+It has an example end point `http://localhost:5000/hello` that you can use to test if all is okay.
 
 ### Live server in Swank
 
