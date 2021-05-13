@@ -4,7 +4,7 @@ This container is heavily inspired in https://github.com/cmatzenbach/conway-ff-a
 
 It is meant to be used as a starting point for more complex web services.
 
-<img src="lispLogo" width=300 align=right>
+<img src="lispLogo.svg" width=300 align=right>
 
 
 ### Build container:
