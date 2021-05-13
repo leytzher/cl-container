@@ -55,17 +55,6 @@ WORKDIR /src/custom-code
 RUN ln -s /src/custom-code/cl-api/cl-api.asd ~/quicklisp/local-projects/cl-api.asd
 RUN sbcl --noinform --non-interactive --eval '(ql:quickload :cl-api)'
 
-# Make a dir for my source on the docker image
-# RUN mkdir /src/
-# Copy project directory to new directory on docker container
-# COPY . /src/
-#ADD ./conway-ff-api.asd /src/
-
-# Create symlink to ~/quicklisp/local-projects for .asd file
-# RUN ln -s /src/conway-ff-api/conway-ff-api.asd ~/quicklisp/local-projects/conway-ff-api.asd
-# Let quicklisp do its thing
-# RUN sbcl --noinform --non-interactive --eval '(ql:quickload :conway-ff-api)'
-
 # Expose the port that hunchentoot is listening on
 EXPOSE 5000
 # Expose the port that swank is listening on
