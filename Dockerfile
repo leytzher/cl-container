@@ -1,15 +1,20 @@
-FROM phusion/baseimage:latest-amd64
+#FROM phusion/baseimage:latest-amd64
+FROM phusion/baseimage:noble-1.0.0
 
 # Get build variables 
 ARG SBCL_VERSION
-ARG SBCL_URL=https://ufpr.dl.sourceforge.net/project/sbcl/sbcl/${SBCL_VERSION}/sbcl-${SBCL_VERSION}-source.tar.bz2 
+#ARG SBCL_URL=https://ufpr.dl.sourceforge.net/project/sbcl/sbcl/${SBCL_VERSION}/sbcl-${SBCL_VERSION}-source.tar.bz2 
+ARG SBCL_URL=https://sourceforge.net/projects/sbcl/files/sbcl/${SBCL_VERSION}/sbcl-${SBCL_VERSION}-source.tar.bz2
 ARG QUICKLISP_VERSION
-ARG QUICKLISP_URL=http://beta.quicklisp.org/dist/quicklisp/${QUICKLISP_VERSION}/distinfo.txt
+ARG QUICKLISP_URL=http://beta.quicklisp.org/dist/quicklisp/${QUICKLISP_VERSION}/
 
 # Install required packages
 RUN apt update &&\
     apt-get install -y \
     build-essential \
+    autoconf \
+    automake \
+    libzstd-dev \
     curl \
     wget \
     cmake \
@@ -22,6 +27,9 @@ RUN apt update &&\
     libev-dev \
     rlwrap \
     time \
+    libev-dev \
+    gcc \
+    libc6-dev \
     sbcl && \
     apt-get clean
 
@@ -40,7 +48,7 @@ RUN wget ${SBCL_URL} && \
 # Install quicklisp
 RUN curl -k -o /tmp/quicklisp.lisp 'https://beta.quicklisp.org/quicklisp.lisp' && \
     sbcl --noinform --non-interactive --load /tmp/quicklisp.lisp --eval \
-        "(quicklisp-quickstart:install :dist-url \"${QUICKLISP_URL}\")" && \
+        "(quicklisp-quickstart:install)" && \
     sbcl --noinform --non-interactive --load ~/quicklisp/setup.lisp --eval \
         '(ql-util:without-prompting (ql:add-to-init-file))' && \
     echo '#+quicklisp(push "/src" ql:*local-project-directories*)' >> ~/.sbclrc && \
